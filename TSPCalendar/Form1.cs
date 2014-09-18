@@ -76,7 +76,7 @@ namespace TSPCalendar
 
                 btn.Location = new Point(
                     daySize * (d % 7) + boarder,  // x position value
-                    daySize * (d / 7) + boarder * 2   // y position value
+                    daySize * (d / 7) + boarder * 3   // y position value
                     );
 
                 this.Controls.Add(btn);
@@ -101,7 +101,7 @@ namespace TSPCalendar
 
                 lbl.Location = new Point(
                     daySize * i + boarder,
-                    2 * boarder - 15
+                    2 * boarder
                     );
 
                 this.Controls.Add(lbl);
