@@ -12,9 +12,14 @@ namespace TSPCalendar
 {
     public partial class NewTask : Form
     {
-        public NewTask()
+        private Form1 main;
+
+        public NewTask( Form1 f )
         {
             InitializeComponent();
+
+            main = f;
+        
         }
 
         private void NewTask_Load(object sender, EventArgs e)
@@ -39,6 +44,17 @@ namespace TSPCalendar
 
         private void label4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+
+            main.makeTask(textBox1.Text, textBox2.Text, textBox3.Text,0,0);
+
+            main.Show();
 
         }
     }
