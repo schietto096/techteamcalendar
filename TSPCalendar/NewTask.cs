@@ -76,6 +76,56 @@ namespace TSPCalendar
 
         private void startHour_ValueChanged(object sender, EventArgs e)
         {
+            if (((int)startHour.Value) > 12)
+            {
+                startHour.Value = 1;
+            }
+
+            if (((int)startHour.Value) < 1)
+            {
+                startHour.Value = 12;
+            } 
+                
+        }
+
+        private void startMin_ValueChanged(object sender, EventArgs e)
+        {
+            if (((int)startMin.Value) > 59)
+            {
+                startMin.Value = 0;
+            }
+
+            if (((int)startMin.Value) < 0)
+            {
+                startMin.Value = 59;
+            } 
+        }
+
+        private void endHour_ValueChanged(object sender, EventArgs e)
+        {
+            if (((int)endHour.Value) > 12)
+            {
+                endHour.Value = 1;
+            }
+
+            if (((int)endHour.Value) < 1)
+            {
+                endHour.Value = 12;
+            } 
+        }
+
+        private void endMin_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (((int)endMin.Value) > 59)
+            {
+                endMin.Value = 0;
+            }
+
+            if (((int)endMin.Value) < 0)
+            {
+                endMin.Value = 59;
+            } 
 
         }
     }

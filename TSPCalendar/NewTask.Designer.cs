@@ -127,12 +127,7 @@
             this.startHour.AllowDrop = true;
             this.startHour.Location = new System.Drawing.Point(82, 141);
             this.startHour.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.startHour.Minimum = new decimal(new int[] {
-            1,
+            13,
             0,
             0,
             0});
@@ -151,13 +146,19 @@
             this.startMin.AllowDrop = true;
             this.startMin.Location = new System.Drawing.Point(152, 141);
             this.startMin.Maximum = new decimal(new int[] {
-            59,
+            60,
             0,
             0,
             0});
+            this.startMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.startMin.Name = "startMin";
             this.startMin.Size = new System.Drawing.Size(64, 20);
             this.startMin.TabIndex = 10;
+            this.startMin.ValueChanged += new System.EventHandler(this.startMin_ValueChanged);
             // 
             // label5
             // 
@@ -193,25 +194,26 @@
             this.endMin.AllowDrop = true;
             this.endMin.Location = new System.Drawing.Point(152, 168);
             this.endMin.Maximum = new decimal(new int[] {
-            59,
+            60,
             0,
             0,
             0});
+            this.endMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.endMin.Name = "endMin";
             this.endMin.Size = new System.Drawing.Size(64, 20);
             this.endMin.TabIndex = 13;
+            this.endMin.ValueChanged += new System.EventHandler(this.endMin_ValueChanged);
             // 
             // endHour
             // 
             this.endHour.AllowDrop = true;
             this.endHour.Location = new System.Drawing.Point(82, 168);
             this.endHour.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.endHour.Minimum = new decimal(new int[] {
-            1,
+            13,
             0,
             0,
             0});
@@ -223,6 +225,7 @@
             0,
             0,
             0});
+            this.endHour.ValueChanged += new System.EventHandler(this.endHour_ValueChanged);
             // 
             // button2
             // 
