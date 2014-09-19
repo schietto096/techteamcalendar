@@ -80,6 +80,13 @@ namespace TSPCalendar
                     daySize * (d / 7) + boarder * 3   // y position value
                     );
 
+
+                // check if day has a task
+                if (cal.HasTask(d + 1 - dayShift, currentMonth, currentYear))
+                {
+
+                }
+
                 btn.Click += new EventHandler(this.buttonDay_Click);
 
                 this.Controls.Add(btn);
@@ -111,15 +118,34 @@ namespace TSPCalendar
             }
 
 
+
+            //Display Tasks if present
+
+
+
+
         }
 
         public void makeTask(string n, string l, string d, Time t)
         {
 
-            //make new task from:
-            //day
-            //currentMonth
-            //currentYear
+            // create new task:
+
+            Task task = new Task();
+
+            task.taskName = n;
+            task.taskLocation = l;
+            task.taskDescription = d;
+            task.taskTime = t;
+            task.taskDay = currentDay;
+            task.taskMonth = currentMonth;
+            task.taskYear = currentYear;
+
+            // add new task to year
+            cal.tasks.Add(task);
+
+            loadMonth(currentMonth);
+
 
         }
 
