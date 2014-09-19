@@ -19,6 +19,7 @@ namespace TSPCalendar
         private Calendar cal;
         private MonthNames currentMonth;
         private int currentYear = 2014;
+        private int currentDay = 1;
 
         private List<Button> buttons = new List<Button>();
 
@@ -79,6 +80,8 @@ namespace TSPCalendar
                     daySize * (d / 7) + boarder * 3   // y position value
                     );
 
+                btn.Click += new EventHandler(this.buttonDay_Click);
+
                 this.Controls.Add(btn);
 
                 //add day buttons to holder list
@@ -108,6 +111,30 @@ namespace TSPCalendar
             }
 
 
+        }
+
+        public void makeTask(string n, string l, string d, int tStart, int tEnd)
+        {
+            //make new task from:
+            //day
+            //currentMonth
+            //currentYear
+
+        }
+
+        private void buttonDay_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            //get day of month from button text
+            currentDay = int.Parse(btn.Text);
+
+            this.Hide();
+
+            // make a new task window prompt
+            NewTask newTask = new NewTask(this);
+            newTask.Show();
+            
         }
 
         private void buttonMonthLeft_Click(object sender, EventArgs e)
