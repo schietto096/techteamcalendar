@@ -113,8 +113,9 @@ namespace TSPCalendar
 
         }
 
-        public void makeTask(string n, string l, string d, int tStart, int tEnd)
+        public void makeTask(string n, string l, string d, Time t)
         {
+
             //make new task from:
             //day
             //currentMonth
