@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TSPCalendar
 {
-    class Time
+    public class Time
     {
 
         public int startHour;

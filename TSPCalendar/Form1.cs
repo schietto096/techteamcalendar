@@ -158,6 +158,22 @@ namespace TSPCalendar
                 currentMonth -= 1;
                 loadMonth(currentMonth);
             }
+            // January to December decrement year
+            else if (btn != null && (int)currentMonth == 1)
+            {
+                currentMonth = currentMonth + 11;
+                //decrement year
+                currentYear -= 1;
+
+                //reinit calendar
+                cal.initCalendar(currentYear);
+
+                //reload month GUI
+                loadMonth(currentMonth);
+
+                //update year label
+                YearLabel.Text = currentYear.ToString();
+            }
 
         }
 
@@ -170,6 +186,22 @@ namespace TSPCalendar
             {
                 currentMonth += 1;
                 loadMonth(currentMonth);
+            }
+            // December to January increment year
+            else if (btn != null && (int)currentMonth == 12)
+            {
+                currentMonth = currentMonth - 11;
+                currentYear += 1;
+                //reinit calendar
+                cal.initCalendar(currentYear);
+
+                //reload month GUI
+                loadMonth(currentMonth);
+
+                //update year label
+                YearLabel.Text = currentYear.ToString();
+                
+
             }
 
         }
