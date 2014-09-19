@@ -22,6 +22,7 @@ namespace TSPCalendar
         private int currentDay = 1;
 
         private List<Button> buttons = new List<Button>();
+        private List<Label> labels = new List<Label>();
 
         public Form1()
         {
@@ -36,6 +37,8 @@ namespace TSPCalendar
             //load month in GUI
             loadMonth(MonthNames.August);
 
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+
 
 
         }
@@ -47,8 +50,18 @@ namespace TSPCalendar
             {
                 foreach (Button b in buttons)
                 {
+                    //this.buttons.Remove(b);
                     this.Controls.Remove(b);
-                    //buttons.Remove(b);
+                    //buttons.Clear();
+                }
+            }
+
+            // if labels in temp label array, delete them
+            if (labels.Count > 0)
+            {
+                foreach (Label l in labels)
+                {
+                    this.Controls.Remove(l);
                 }
             }
 
@@ -82,9 +95,28 @@ namespace TSPCalendar
 
 
                 // check if day has a task
-                if (cal.HasTask(d + 1 - dayShift, currentMonth, currentYear))
-                {
+                int numTasks = cal.NumTask(d + 1 - dayShift, currentMonth, currentYear);
 
+                if (numTasks > 0)
+                {
+                    // Add indicator for task at this day
+
+                    Button taskLabel = new Button();
+
+                    taskLabel.Location = new Point(
+                         daySize * (d % 7) + boarder + (daySize/2),  // x position value
+                         daySize * (d / 7) + boarder * 3 +(daySize/2)  // y position value
+                        );
+
+                    taskLabel.Text = numTasks.ToString();
+
+                    taskLabel.Width = daySize / 2;
+                    taskLabel.Height = daySize / 2;
+
+                    //taskLabel.BackColor = System.Drawing.Color.Transparent;
+
+                    this.Controls.Add(taskLabel);
+                    this.buttons.Add(taskLabel);
                 }
 
                 btn.Click += new EventHandler(this.buttonDay_Click);
@@ -115,6 +147,7 @@ namespace TSPCalendar
                     );
 
                 this.Controls.Add(lbl);
+                
             }
 
 

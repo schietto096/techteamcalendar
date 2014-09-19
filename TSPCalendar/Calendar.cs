@@ -61,17 +61,33 @@ namespace TSPCalendar
 
             foreach (Task t in tasks)
             {
-                //Console.WriteLine("" +t.taskDay.ToString() +" " +(int)t.taskMonth +" "+t.taskYear.ToString());
-                //Console.WriteLine("" + d.ToString() + " " + (int)m+ " " + year.ToString());
 
                 if (t.taskYear == year && t.taskMonth == m && t.taskDay == d)
                 {
-                    Console.WriteLine("Has Task!!!");
+                    return true;
                 }
 
             }
 
-            return true;
+            return false;
+        }
+
+        public int NumTask(int d, MonthNames m, int year)
+        {
+
+            int numTasks = 0;
+
+            foreach (Task t in tasks)
+            {
+
+                if (t.taskYear == year && t.taskMonth == m && t.taskDay == d)
+                {
+                    numTasks++;
+                }
+
+            }
+
+            return numTasks;
         }
 
     }
