@@ -43,6 +43,7 @@
             this.AM2 = new System.Windows.Forms.CheckBox();
             this.endMin = new System.Windows.Forms.NumericUpDown();
             this.endHour = new System.Windows.Forms.NumericUpDown();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.startHour)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endMin)).BeginInit();
@@ -51,7 +52,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(103, 227);
+            this.button1.Location = new System.Drawing.Point(71, 227);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -126,12 +127,7 @@
             this.startHour.AllowDrop = true;
             this.startHour.Location = new System.Drawing.Point(82, 141);
             this.startHour.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.startHour.Minimum = new decimal(new int[] {
-            1,
+            13,
             0,
             0,
             0});
@@ -143,19 +139,26 @@
             0,
             0,
             0});
+            this.startHour.ValueChanged += new System.EventHandler(this.startHour_ValueChanged);
             // 
             // startMin
             // 
             this.startMin.AllowDrop = true;
             this.startMin.Location = new System.Drawing.Point(152, 141);
             this.startMin.Maximum = new decimal(new int[] {
-            59,
+            60,
             0,
             0,
             0});
+            this.startMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.startMin.Name = "startMin";
             this.startMin.Size = new System.Drawing.Size(64, 20);
             this.startMin.TabIndex = 10;
+            this.startMin.ValueChanged += new System.EventHandler(this.startMin_ValueChanged);
             // 
             // label5
             // 
@@ -191,25 +194,26 @@
             this.endMin.AllowDrop = true;
             this.endMin.Location = new System.Drawing.Point(152, 168);
             this.endMin.Maximum = new decimal(new int[] {
-            59,
+            60,
             0,
             0,
             0});
+            this.endMin.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.endMin.Name = "endMin";
             this.endMin.Size = new System.Drawing.Size(64, 20);
             this.endMin.TabIndex = 13;
+            this.endMin.ValueChanged += new System.EventHandler(this.endMin_ValueChanged);
             // 
             // endHour
             // 
             this.endHour.AllowDrop = true;
             this.endHour.Location = new System.Drawing.Point(82, 168);
             this.endHour.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.endHour.Minimum = new decimal(new int[] {
-            1,
+            13,
             0,
             0,
             0});
@@ -221,12 +225,24 @@
             0,
             0,
             0});
+            this.endHour.ValueChanged += new System.EventHandler(this.endHour_ValueChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(152, 227);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 15;
+            this.button2.Text = "Cancel";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // NewTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.AM2);
             this.Controls.Add(this.endMin);
             this.Controls.Add(this.endHour);
@@ -271,5 +287,6 @@
         private System.Windows.Forms.CheckBox AM2;
         private System.Windows.Forms.NumericUpDown endMin;
         private System.Windows.Forms.NumericUpDown endHour;
+        private System.Windows.Forms.Button button2;
     }
 }
