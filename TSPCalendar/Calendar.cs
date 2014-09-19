@@ -13,6 +13,7 @@ namespace TSPCalendar
     {
 
         public Year year;
+        public List<Task> tasks = new List<Task>();
 
         public void initCalendar(int y)
         {
@@ -51,6 +52,26 @@ namespace TSPCalendar
                 }
             }
 
+        }
+
+        public bool HasTask(int d, MonthNames m, int year)
+        {
+
+            
+
+            foreach (Task t in tasks)
+            {
+                //Console.WriteLine("" +t.taskDay.ToString() +" " +(int)t.taskMonth +" "+t.taskYear.ToString());
+                //Console.WriteLine("" + d.ToString() + " " + (int)m+ " " + year.ToString());
+
+                if (t.taskYear == year && t.taskMonth == m && t.taskDay == d)
+                {
+                    Console.WriteLine("Has Task!!!");
+                }
+
+            }
+
+            return true;
         }
 
     }
