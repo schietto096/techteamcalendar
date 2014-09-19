@@ -19,14 +19,11 @@ namespace TSPCalendar
             dow = d;
             dayNum = number;
             monthName = m;
-
-
-
-
         }
 
 
-        void AddTask(string n, string l, string d){
+        void AddTask(string n, string l, string d)
+        {
 
             Task temp = new Task();
 
