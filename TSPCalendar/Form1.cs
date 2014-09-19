@@ -79,6 +79,8 @@ namespace TSPCalendar
                     daySize * (d / 7) + boarder * 3   // y position value
                     );
 
+                btn.Click += new EventHandler(this.buttonDay_Click);
+
                 this.Controls.Add(btn);
 
                 //add day buttons to holder list
@@ -108,6 +110,27 @@ namespace TSPCalendar
             }
 
 
+        }
+
+        private void buttonDay_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            //get day of month from button text
+            int day = int.Parse(btn.Text);
+
+            this.Hide();
+
+            //make new task from:
+            //day
+            //currentMonth
+            //currentYear
+
+            NewTask newTask = new NewTask();
+            newTask.Show();
+
+            //newTask.Hide();
+            
         }
 
         private void buttonMonthLeft_Click(object sender, EventArgs e)
