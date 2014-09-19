@@ -38,7 +38,7 @@
             // 
             // buttonMonthLeft
             // 
-            this.buttonMonthLeft.Location = new System.Drawing.Point(58, 12);
+            this.buttonMonthLeft.Location = new System.Drawing.Point(39, 12);
             this.buttonMonthLeft.Name = "buttonMonthLeft";
             this.buttonMonthLeft.Size = new System.Drawing.Size(32, 32);
             this.buttonMonthLeft.TabIndex = 0;
@@ -48,10 +48,10 @@
             // 
             // MonthLabel
             // 
-            this.MonthLabel.AutoSize = true;
-            this.MonthLabel.Location = new System.Drawing.Point(116, 22);
+            this.MonthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MonthLabel.Location = new System.Drawing.Point(77, 12);
             this.MonthLabel.Name = "MonthLabel";
-            this.MonthLabel.Size = new System.Drawing.Size(37, 13);
+            this.MonthLabel.Size = new System.Drawing.Size(137, 31);
             this.MonthLabel.TabIndex = 1;
             this.MonthLabel.Text = "Month";
             this.MonthLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -59,7 +59,7 @@
             // 
             // buttonMonthRight
             // 
-            this.buttonMonthRight.Location = new System.Drawing.Point(191, 12);
+            this.buttonMonthRight.Location = new System.Drawing.Point(220, 11);
             this.buttonMonthRight.Name = "buttonMonthRight";
             this.buttonMonthRight.Size = new System.Drawing.Size(32, 32);
             this.buttonMonthRight.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             // buttonYearRight
             // 
-            this.buttonYearRight.Location = new System.Drawing.Point(334, 12);
+            this.buttonYearRight.Location = new System.Drawing.Point(382, 12);
             this.buttonYearRight.Name = "buttonYearRight";
             this.buttonYearRight.Size = new System.Drawing.Size(32, 32);
             this.buttonYearRight.TabIndex = 5;
@@ -79,16 +79,17 @@
             // 
             // YearLabel
             // 
-            this.YearLabel.AutoSize = true;
-            this.YearLabel.Location = new System.Drawing.Point(287, 22);
+            this.YearLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearLabel.Location = new System.Drawing.Point(316, 15);
             this.YearLabel.Name = "YearLabel";
-            this.YearLabel.Size = new System.Drawing.Size(29, 13);
+            this.YearLabel.Size = new System.Drawing.Size(60, 31);
             this.YearLabel.TabIndex = 4;
             this.YearLabel.Text = "Year";
+            this.YearLabel.Click += new System.EventHandler(this.YearLabel_Click);
             // 
             // buttonYearLeft
             // 
-            this.buttonYearLeft.Location = new System.Drawing.Point(239, 12);
+            this.buttonYearLeft.Location = new System.Drawing.Point(278, 11);
             this.buttonYearLeft.Name = "buttonYearLeft";
             this.buttonYearLeft.Size = new System.Drawing.Size(32, 32);
             this.buttonYearLeft.TabIndex = 3;
@@ -100,7 +101,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(502, 486);
+            this.ClientSize = new System.Drawing.Size(502, 517);
             this.Controls.Add(this.buttonYearRight);
             this.Controls.Add(this.YearLabel);
             this.Controls.Add(this.buttonYearLeft);
@@ -110,7 +111,6 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

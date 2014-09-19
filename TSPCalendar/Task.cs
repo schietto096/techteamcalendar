@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace TSPCalendar
 {
-    class Task
+    public class Task
     {
-        public string TaskName = "";
-        public string TaskLocation = "";
-        public string TaskDescription = "";
+        public string taskName = "";
+        public string taskLocation = "";
+        public string taskDescription = "";
+        public Time taskTime;
+        public int taskDay;
+        public MonthNames taskMonth;
+        public int taskYear;
+
+
 
     }
+    
 }

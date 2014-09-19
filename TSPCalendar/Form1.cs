@@ -19,6 +19,7 @@ namespace TSPCalendar
         private Calendar cal;
         private MonthNames currentMonth;
         private int currentYear = 2014;
+        private int currentDay = 1;
 
         private List<Button> buttons = new List<Button>();
 
@@ -76,8 +77,17 @@ namespace TSPCalendar
 
                 btn.Location = new Point(
                     daySize * (d % 7) + boarder,  // x position value
-                    daySize * (d / 7) + boarder * 2   // y position value
+                    daySize * (d / 7) + boarder * 3   // y position value
                     );
+
+
+                // check if day has a task
+                if (cal.HasTask(d + 1 - dayShift, currentMonth, currentYear))
+                {
+
+                }
+
+                btn.Click += new EventHandler(this.buttonDay_Click);
 
                 this.Controls.Add(btn);
 
@@ -101,13 +111,57 @@ namespace TSPCalendar
 
                 lbl.Location = new Point(
                     daySize * i + boarder,
-                    2 * boarder - 15
+                    2 * boarder
                     );
 
                 this.Controls.Add(lbl);
             }
 
 
+
+            //Display Tasks if present
+
+
+
+
+        }
+
+        public void makeTask(string n, string l, string d, Time t)
+        {
+
+            // create new task:
+
+            Task task = new Task();
+
+            task.taskName = n;
+            task.taskLocation = l;
+            task.taskDescription = d;
+            task.taskTime = t;
+            task.taskDay = currentDay;
+            task.taskMonth = currentMonth;
+            task.taskYear = currentYear;
+
+            // add new task to year
+            cal.tasks.Add(task);
+
+            loadMonth(currentMonth);
+
+
+        }
+
+        private void buttonDay_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            //get day of month from button text
+            currentDay = int.Parse(btn.Text);
+
+            this.Hide();
+
+            // make a new task window prompt
+            NewTask newTask = new NewTask(this);
+            newTask.Show();
+            
         }
 
         private void buttonMonthLeft_Click(object sender, EventArgs e)
@@ -130,6 +184,22 @@ namespace TSPCalendar
                 currentMonth -= 1;
                 loadMonth(currentMonth);
             }
+            // January to December decrement year
+            else if (btn != null && (int)currentMonth == 1)
+            {
+                currentMonth = currentMonth + 11;
+                //decrement year
+                currentYear -= 1;
+
+                //reinit calendar
+                cal.initCalendar(currentYear);
+
+                //reload month GUI
+                loadMonth(currentMonth);
+
+                //update year label
+                YearLabel.Text = currentYear.ToString();
+            }
 
         }
 
@@ -142,6 +212,22 @@ namespace TSPCalendar
             {
                 currentMonth += 1;
                 loadMonth(currentMonth);
+            }
+            // December to January increment year
+            else if (btn != null && (int)currentMonth == 12)
+            {
+                currentMonth = currentMonth - 11;
+                currentYear += 1;
+                //reinit calendar
+                cal.initCalendar(currentYear);
+
+                //reload month GUI
+                loadMonth(currentMonth);
+
+                //update year label
+                YearLabel.Text = currentYear.ToString();
+                
+
             }
 
         }
@@ -187,6 +273,11 @@ namespace TSPCalendar
                 //update year label
                 YearLabel.Text = currentYear.ToString();
             }
+
+        }
+
+        private void YearLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
