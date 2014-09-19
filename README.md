@@ -1,9 +1,9 @@
 techteamcalendar
 ================
 
-MTU CS 3141 Team Software Project Calendar
+Michigan Technological University
+CS 3141 Calendar Project
 
 Aurora Seidenwand
 Andrew Schlosser
-================
 
