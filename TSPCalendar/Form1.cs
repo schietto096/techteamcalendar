@@ -216,5 +216,10 @@ namespace TSPCalendar
             }
 
         }
+
+        private void YearLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
