@@ -17,14 +17,22 @@ namespace TSPCalendar
         public NewTask( Form1 f )
         {
             InitializeComponent();
-            
+
+            this.FormClosed += NewTask_FormClosed;
+
             main = f;
-        
+            main.Hide();
+
+        }
+
+        void NewTask_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            main.Show();
         }
 
         private void NewTask_Load(object sender, EventArgs e)
         {
-            main.Show();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -128,5 +136,6 @@ namespace TSPCalendar
             } 
 
         }
-    }
+    
+}
 }

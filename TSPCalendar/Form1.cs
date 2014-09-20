@@ -28,8 +28,11 @@ namespace TSPCalendar
         {
             InitializeComponent();
 
-            // change background color
-            //this.BackColor = System.Drawing.Color.FromArgb(0,0,0);//.Black;//FromArgb(95,218,232);
+            // get current system day month and year
+            currentDay = System.DateTime.Now.Day;
+            currentMonth = (MonthNames)System.DateTime.Now.Month;
+            currentYear = System.DateTime.Now.Year;
+
 
             // instantiate calender class
             cal = new Calendar();
@@ -38,7 +41,7 @@ namespace TSPCalendar
             cal.initCalendar(currentYear);
 
             //load month in GUI
-            loadMonth(MonthNames.August);
+            loadMonth(currentMonth);
 
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
 
@@ -101,6 +104,11 @@ namespace TSPCalendar
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
                 btn.Font = new Font("Microsoft Sans serif",16);
+
+                if(System.DateTime.Now.Day == d+1-dayShift && System.DateTime.Now.Month == (int) currentMonth && System.DateTime.Now.Year == currentYear)
+                {
+                    btn.BackColor = System.Drawing.Color.LawnGreen;
+                }
                 
 
                 // check if day has a task
@@ -206,6 +214,7 @@ namespace TSPCalendar
             currentDay = int.Parse(btn.Text);
 
             this.Hide();
+            
 
             // make a new task window prompt
             NewTask newTask = new NewTask(this);
