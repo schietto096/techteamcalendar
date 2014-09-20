@@ -39,9 +39,10 @@
             // 
             // buttonMonthLeft
             // 
+            this.buttonMonthLeft.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonMonthLeft, "buttonMonthLeft");
             this.buttonMonthLeft.Name = "buttonMonthLeft";
-            this.buttonMonthLeft.UseVisualStyleBackColor = true;
+            this.buttonMonthLeft.UseVisualStyleBackColor = false;
             this.buttonMonthLeft.Click += new System.EventHandler(this.buttonMonthLeft_Click_1);
             // 
             // MonthLabel
@@ -61,6 +62,8 @@
             // buttonYearRight
             // 
             resources.ApplyResources(this.buttonYearRight, "buttonYearRight");
+            this.buttonYearRight.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonYearRight.FlatAppearance.BorderSize = 0;
             this.buttonYearRight.Name = "buttonYearRight";
             this.buttonYearRight.UseVisualStyleBackColor = true;
             this.buttonYearRight.Click += new System.EventHandler(this.buttonYearRight_Click);
@@ -83,6 +86,7 @@
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.buttonYearRight);
             this.Controls.Add(this.YearLabel);
             this.Controls.Add(this.buttonYearLeft);

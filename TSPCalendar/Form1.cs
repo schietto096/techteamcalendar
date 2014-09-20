@@ -100,6 +100,8 @@ namespace TSPCalendar
                 btn.BackColor = System.Drawing.Color.Ivory;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
+                btn.Font = new Font("Microsoft Sans serif",16);
+                
 
                 // check if day has a task
                 int numTasks = cal.NumTask(d + 1 - dayShift, currentMonth, currentYear);
@@ -125,7 +127,7 @@ namespace TSPCalendar
                     taskLabel.FlatStyle = FlatStyle.Flat;
                     taskLabel.FlatAppearance.BorderSize = 0;
                     taskLabel.ForeColor = System.Drawing.Color.White;
-
+                    taskLabel.Font = new Font("Microsoft Sans serif", 12);
 
                     this.Controls.Add(taskLabel);
                     this.buttons.Add(taskLabel);
