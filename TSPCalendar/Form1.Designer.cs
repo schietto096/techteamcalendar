@@ -41,6 +41,7 @@
             // 
             this.buttonMonthLeft.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonMonthLeft, "buttonMonthLeft");
+            this.buttonMonthLeft.FlatAppearance.BorderSize = 0;
             this.buttonMonthLeft.Name = "buttonMonthLeft";
             this.buttonMonthLeft.UseVisualStyleBackColor = false;
             this.buttonMonthLeft.Click += new System.EventHandler(this.buttonMonthLeft_Click_1);
@@ -54,18 +55,21 @@
             // 
             // buttonMonthRight
             // 
+            this.buttonMonthRight.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonMonthRight, "buttonMonthRight");
+            this.buttonMonthRight.FlatAppearance.BorderSize = 0;
             this.buttonMonthRight.Name = "buttonMonthRight";
-            this.buttonMonthRight.UseVisualStyleBackColor = true;
+            this.buttonMonthRight.UseVisualStyleBackColor = false;
             this.buttonMonthRight.Click += new System.EventHandler(this.buttonMonthRight_Click);
             // 
             // buttonYearRight
             // 
+            this.buttonYearRight.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonYearRight, "buttonYearRight");
             this.buttonYearRight.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonYearRight.FlatAppearance.BorderSize = 0;
             this.buttonYearRight.Name = "buttonYearRight";
-            this.buttonYearRight.UseVisualStyleBackColor = true;
+            this.buttonYearRight.UseVisualStyleBackColor = false;
             this.buttonYearRight.Click += new System.EventHandler(this.buttonYearRight_Click);
             // 
             // YearLabel
@@ -77,9 +81,11 @@
             // 
             // buttonYearLeft
             // 
+            this.buttonYearLeft.BackColor = System.Drawing.Color.Transparent;
             resources.ApplyResources(this.buttonYearLeft, "buttonYearLeft");
+            this.buttonYearLeft.FlatAppearance.BorderSize = 0;
             this.buttonYearLeft.Name = "buttonYearLeft";
-            this.buttonYearLeft.UseVisualStyleBackColor = true;
+            this.buttonYearLeft.UseVisualStyleBackColor = false;
             this.buttonYearLeft.Click += new System.EventHandler(this.buttonYearLeft_Click);
             // 
             // Form1
