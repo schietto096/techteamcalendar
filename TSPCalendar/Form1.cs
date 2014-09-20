@@ -28,6 +28,9 @@ namespace TSPCalendar
         {
             InitializeComponent();
 
+            // change background color
+            //this.BackColor = System.Drawing.Color.FromArgb(0,0,0);//.Black;//FromArgb(95,218,232);
+
             // instantiate calender class
             cal = new Calendar();
 
@@ -83,8 +86,8 @@ namespace TSPCalendar
 
                 btn.Text = cal.year.months[(int)currentMonth - 1].days[d - dayShift].dayNum.ToString();
 
-                btn.Width = daySize;
-                btn.Height = daySize;
+                btn.Width = daySize-4;
+                btn.Height = daySize-4;
 
                 btn.TextAlign = ContentAlignment.TopLeft;
 
@@ -93,6 +96,10 @@ namespace TSPCalendar
                     daySize * (d / 7) + boarder * 3   // y position value
                     );
 
+                //get rid of boarder and change color
+                btn.BackColor = System.Drawing.Color.Ivory;
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
 
                 // check if day has a task
                 int numTasks = cal.NumTask(d + 1 - dayShift, currentMonth, currentYear);
@@ -110,10 +117,15 @@ namespace TSPCalendar
 
                     taskLabel.Text = numTasks.ToString();
 
-                    taskLabel.Width = daySize / 2;
-                    taskLabel.Height = daySize / 2;
+                    taskLabel.Width = daySize / 2 - 3;
+                    taskLabel.Height = daySize / 2 - 3;
 
-                    //taskLabel.BackColor = System.Drawing.Color.Transparent;
+                    //get rid of boarder and change color
+                    taskLabel.BackColor = System.Drawing.Color.SeaGreen;
+                    taskLabel.FlatStyle = FlatStyle.Flat;
+                    taskLabel.FlatAppearance.BorderSize = 0;
+                    taskLabel.ForeColor = System.Drawing.Color.White;
+
 
                     this.Controls.Add(taskLabel);
                     this.buttons.Add(taskLabel);
@@ -145,6 +157,8 @@ namespace TSPCalendar
                     daySize * i + boarder,
                     2 * boarder
                     );
+
+                lbl.BackColor = System.Drawing.Color.Transparent;
 
                 this.Controls.Add(lbl);
                 

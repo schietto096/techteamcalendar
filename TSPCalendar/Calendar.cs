@@ -90,6 +90,27 @@ namespace TSPCalendar
             return numTasks;
         }
 
+        public List<Task> GetTasks(int d, MonthNames m, int year)
+        {
+
+            List<Task> tempTasks = new List<Task>();
+
+            foreach (Task t in tasks)
+            {
+
+                if (t.taskYear == year && t.taskMonth == m && t.taskDay == d)
+                {
+                    tempTasks.Add(t);
+                }
+
+            }
+
+            return tempTasks;
+
+
+
+        } 
+
     }
 
 
