@@ -90,6 +90,15 @@ namespace TSPCalendar
             return numTasks;
         }
 
+        public List<Task> GetTaskList()
+        {
+            return this.tasks;
+        }
+
+
+
+
+
     }
 
 

@@ -16,5 +16,15 @@ namespace TSPCalendar
         {
             InitializeComponent();
         }
+
+        private void taskList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        void loadTaskList()
+        {
+        }
+
     }
 }

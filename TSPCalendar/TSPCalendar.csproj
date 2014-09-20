@@ -73,6 +73,9 @@
     <Compile Include="Time.cs" />
     <Compile Include="Week.cs" />
     <Compile Include="Year.cs" />
+    <EmbeddedResource Include="Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
