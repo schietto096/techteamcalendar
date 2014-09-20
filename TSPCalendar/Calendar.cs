@@ -18,6 +18,8 @@ namespace TSPCalendar
         public void initCalendar(int y)
         {
 
+            //TSPCalendar.Properties.Settings.Default
+
             //create current year
             year = new Year();
 

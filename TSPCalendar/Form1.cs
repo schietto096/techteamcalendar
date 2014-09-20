@@ -101,13 +101,14 @@ namespace TSPCalendar
 
                 //get rid of boarder and change color
                 btn.BackColor = System.Drawing.Color.Ivory;
+                
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
                 btn.Font = new Font("Microsoft Sans serif",16);
 
                 if(System.DateTime.Now.Day == d+1-dayShift && System.DateTime.Now.Month == (int) currentMonth && System.DateTime.Now.Year == currentYear)
                 {
-                    btn.BackColor = System.Drawing.Color.LawnGreen;
+                    btn.BackColor = System.Drawing.Color.LightGreen;
                 }
                 
 
