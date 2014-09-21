@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TSPCalendar
 {
-    class Day
+    public class Day
     {
         public DayNames dow;
         public int dayNum;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TSPCalendar
 {
-    class Year
+    public class Year
     {
 
         public int yearNum = 2000;

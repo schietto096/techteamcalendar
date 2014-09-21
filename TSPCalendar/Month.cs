@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TSPCalendar
 {
-    class Month
+    public class Month
     {
 
         public MonthNames monthName;

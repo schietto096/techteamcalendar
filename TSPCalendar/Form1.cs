@@ -105,7 +105,8 @@ namespace TSPCalendar
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.FlatAppearance.BorderSize = 0;
                 btn.Font = new Font("Microsoft Sans serif",16);
-
+                
+                // highlight current day in a green color
                 if(System.DateTime.Now.Day == d+1-dayShift && System.DateTime.Now.Month == (int) currentMonth && System.DateTime.Now.Year == currentYear)
                 {
                     btn.BackColor = System.Drawing.Color.LightGreen;
@@ -118,7 +119,6 @@ namespace TSPCalendar
                 if (numTasks > 0)
                 {
                     // Add indicator for task at this day
-
                     Button taskLabel = new Button();
 
                     taskLabel.Location = new Point(
@@ -138,11 +138,16 @@ namespace TSPCalendar
                     taskLabel.ForeColor = System.Drawing.Color.White;
                     taskLabel.Font = new Font("Microsoft Sans serif", 12);
 
+                    taskLabel.Name = (d + 1 - dayShift).ToString();
+
                     this.Controls.Add(taskLabel);
-                    this.buttons.Add(taskLabel);
+                    this.buttons.Add(taskLabel);               
+
+                    taskLabel.Click += new EventHandler(this.buttonTasks_Click);
                 }
 
                 btn.Click += new EventHandler(this.buttonDay_Click);
+
 
                 this.Controls.Add(btn);
 
@@ -177,10 +182,16 @@ namespace TSPCalendar
 
 
 
-            //Display Tasks if present
+        }
 
+        private void buttonTasks_Click(object sender, EventArgs e)
+        {
+            // get sender
+            Button btn = sender as Button;
 
-
+            // make an Agenda window prompt
+            Agenda agenda = new Agenda(Convert.ToInt32(btn.Name),currentMonth,currentYear, cal);
+            agenda.Show();
 
         }
 

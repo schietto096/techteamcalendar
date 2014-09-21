@@ -9,7 +9,7 @@ namespace TSPCalendar
     public enum DayNames { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
     public enum MonthNames { January = 1, February, March, April, May, June, July, August, September, October, November, December };
 
-    class Calendar
+    public class Calendar
     {
 
         public Year year;
